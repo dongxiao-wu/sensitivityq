@@ -2,10 +2,11 @@ Package: sensitivityq
 Title: Extended Sensitivity Analysis for Observational Studies: Quantiles of Biases in All Matched Sets
 Version: 0.0.0.9000
 Authors@R: 
-    person(given = "??",
-           family = "?",
-           role = "?",
-           email = "?")
+    person(given = "Dongxiao",
+           family = "Wu",
+           role = "Doctoral Candidate, Department of Statistics, University of Illinois at Urbana-
+Champaign",
+           email = "dw12@illinois.edu")
 Description: This package extend Rosenbaum’s sensitivity analysis to infer all quantiles of the biases across all sets, extending previous works that essentially focusing on the maximum bias.
 License: `use_mit_license()`, `use_gpl3_license()` or friends to
     pick a license
