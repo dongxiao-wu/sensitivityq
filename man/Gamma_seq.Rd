@@ -4,7 +4,7 @@
 \alias{Gamma_seq}
 \title{The sequence of sensitivity values under the loosen precondition that only parts of the biases are bounded.}
 \usage{
-Gamma_seq(y, z, mset, inner = 0, trim = 3, thres, K, tol = 1e-04)
+Gamma_seq(y, z, mset, inner = 0, trim = 3, thres, Ks, tol = 1e-04)
 }
 \arguments{
 \item{y}{A vector of responses with no missing data.}
@@ -21,21 +21,21 @@ Taking trim < Inf limits the influence of outliers; see Huber (1981). Taking tri
 
 \item{thres}{the significance level for the test}
 
-\item{K}{the needed length of the sequence}
+\item{Ks}{the sequence of k that need to generate Gamma_{[k]}, the sequence needs to be in decreasing order}
 
 \item{tol}{the desired accuracy (convergence tolerance).}
 }
 \value{
-A list of the lower confidence limits for the biases at rank k(k=I, I-1, ..., I-K+1)
+A list of the lower confidence limits for the biases at rank k for the k's provided in the parameter Ks
 }
 \description{
-This function calculates lower confidence limits for the biases at rank k(k=I,I-1,...,I-K+1) across all matched sets.
+This function calculates lower confidence limits for the biases at rank k's(for a sequence of k's as needed in decreasing order) across all matched sets.
 }
 \examples{
 I <- 500
 mset <- as.vector(rbind(1:I,1:I))
 z <- as.vector(rbind(rep(1,I),rep(0,I)))
 y <- rnorm(1000,sd=sqrt(0.5))+0.5*z
-Gamma_seq(y,z,mset,K=200,thres=0.05)
+Gamma_seq(y,z,mset,Ks=500:450,thres=0.05)
 
 }
