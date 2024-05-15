@@ -23,6 +23,6 @@ The two main functions in this package are:
 
 `senmk()`: calculate p-value, statistics, expectation and variance for the extended sensitivity analysis of a specific quantile of biases and a specific sensitivity parameter Gamma.
 
-`Gamma_seq()`: calculates lower confidence limits for the biases at rank k(k=I,I-1,...,I-K+1) across all matched sets.
+`Gamma_seq()`: calculates lower confidence limits for the biases at rank k's(for a sequance of k as needed) across all matched sets.
 
 For more informations, see the help pages in the package.
