@@ -30,7 +30,7 @@ Usage:
 
 Example:
 
-``
+```
 I <- 500
 
 mset <- as.vector(rbind(1:I,1:I))
@@ -40,7 +40,7 @@ z <- as.vector(rbind(rep(1,I),rep(0,I)))
 y <- rnorm(1000,sd=sqrt(0.5))+0.5*z
 
 senmk(y, z, mset, k = I)
-``
+```
 
 
 ### `Gamma_seq()`
@@ -52,7 +52,7 @@ Usage:
 
 Example:
 
-``
+```
 I <- 500
 
 mset <- as.vector(rbind(1:I,1:I))
@@ -62,6 +62,6 @@ z <- as.vector(rbind(rep(1,I),rep(0,I)))
 y <- rnorm(1000,sd=sqrt(0.5))+0.5*z
 
 Gamma_seq(y,z,mset,Ks=500:450,thres=0.05)
-``
+```
 
 For more detailed descriptions of the arguments and output values, see the help pages in the package.
