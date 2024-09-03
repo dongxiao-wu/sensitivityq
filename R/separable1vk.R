@@ -31,6 +31,8 @@ separable1vk <- function (ymat, gamma = 1, k, precise=FALSE)
       if (!is.na(ymat[i, 1])) {
         rk <- sort(as.vector(unlist(ymat[i, ])))
         rk <- sort(rk[!is.na(rk)])
+        Q <- cumsum(rk)
+        S <- cumsum(rk^2)
         ni <- length(rk)
         mu_gamma[i] <- (-Inf)
         var_gamma[i] <- (-Inf)
@@ -38,11 +40,11 @@ separable1vk <- function (ymat, gamma = 1, k, precise=FALSE)
         var_inf[i] <- 0
         for (ai in 1:(ni - 1)) {
           if (gamma == Inf){
-            mu_ia_gamma <- sum(rk[(ai + 1):ni])/(ni - ai)
+            mu_ia_gamma <- (Q[ni]-Q[ai])/(ni - ai)
             var_ia_gamma <- sum(rk[(ai + 1):ni]^2)/(ni - ai)-(mu_ia_gamma^2)}
           else{
-            mu_ia_gamma <- (sum(rk[1:ai]) + gamma * sum(rk[(ai + 1):ni])) / (ai + gamma * (ni - ai))
-            var_ia_gamma <- max(((sum(rk[1:ai]^2) + gamma * sum(rk[(ai + 1):ni]^2)) / (ai + gamma * (ni - ai))) - (mu_ia_gamma^2),0)
+            mu_ia_gamma <- (Q[ai] + gamma * (Q[ni]-Q[ai])) / (ai + gamma * (ni - ai))
+            var_ia_gamma <- max(((S[ai] + gamma * (S[ni]-S[ai])) / (ai + gamma * (ni - ai))) - (mu_ia_gamma^2),0)
           }
           if (mu_ia_gamma > mu_gamma[i]) {
             mu_gamma[i] <- mu_ia_gamma
