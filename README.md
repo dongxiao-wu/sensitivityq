@@ -24,15 +24,21 @@ The two main functions in this package are:
 ### `senmk()`
 Calculate p-value, statistics, expectation and variance for the extended sensitivity analysis of a specific quantile of biases and a specific sensitivity parameter Gamma.
 
-Usage: `senmk(y, z, mset, k, gamma = 1, inner = 0, trim = 3, lambda = 1/2, tau = 0, alternative = "greater", TonT = FALSE)`
+Usage: 
+
+`senmk(y, z, mset, k, gamma = 1, inner = 0, trim = 3, lambda = 1/2, tau = 0, alternative = "greater", TonT = FALSE)`
 
 Example:
 
 ``
 I <- 500
+
 mset <- as.vector(rbind(1:I,1:I))
+
 z <- as.vector(rbind(rep(1,I),rep(0,I)))
+
 y <- rnorm(1000,sd=sqrt(0.5))+0.5*z
+
 senmk(y, z, mset, k = I)
 ``
 
@@ -40,15 +46,21 @@ senmk(y, z, mset, k = I)
 ### `Gamma_seq()`
 Calculates lower confidence limits for the biases at rank k's(for a sequance of k as needed) across all matched sets.
 
-Usage: `Gamma_seq(y, z, mset, inner = 0, trim = 3, thres, Ks, tol = 1e-04)`
+Usage: 
+
+`Gamma_seq(y, z, mset, inner = 0, trim = 3, thres, Ks, tol = 1e-04)`
 
 Example:
 
 ``
 I <- 500
+
 mset <- as.vector(rbind(1:I,1:I))
+
 z <- as.vector(rbind(rep(1,I),rep(0,I)))
+
 y <- rnorm(1000,sd=sqrt(0.5))+0.5*z
+
 Gamma_seq(y,z,mset,Ks=500:450,thres=0.05)
 ``
 
