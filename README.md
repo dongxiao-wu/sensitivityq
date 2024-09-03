@@ -26,7 +26,7 @@ Calculate p-value, statistics, expectation and variance for the extended sensiti
 
 Usage: 
 
-`senmk(y, z, mset, k, gamma = 1, inner = 0, trim = 3, lambda = 1/2, tau = 0, alternative = "greater", TonT = FALSE)`
+`senmk(y, z, mset, k, gamma = 1, inner = 0, trim = 3, lambda = 1/2, tau = 0, alternative = "greater", TonT = FALSE, precise = FALSE)`
 
 Example:
 
@@ -48,7 +48,7 @@ Calculates lower confidence limits for the biases at rank k's(for a sequance of 
 
 Usage: 
 
-`Gamma_seq(y, z, mset, inner = 0, trim = 3, thres, Ks, tol = 1e-04)`
+`Gamma_seq(y, z, mset, inner = 0, trim = 3, thres, Ks, tol = 1e-04, precise = FALSE)`
 
 Example:
 
