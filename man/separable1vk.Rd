@@ -4,7 +4,7 @@
 \alias{separable1vk}
 \title{Asymptotic separable calculations internal to other functions.}
 \usage{
-separable1vk(ymat, gamma = 1, k)
+separable1vk(ymat, gamma = 1, k, precise = FALSE)
 }
 \arguments{
 \item{ymat}{ymat is a matrix whose rows are matched sets and whose columns are matched individuals. The first column describes treated individuals. Other columns describe controls. If matched sets contain variable numbers of controls, NAs fill in empty spaces in ymat; see the documentation for senmv. In senmk, the matrix ymat is created by mscorev. Instead, if there were no NAs and ranks within rows were used in ymat, then separable1v would perform a sensitivity analysis for the stratified Wilcoxon two-sample test. Applied directly to data, it performs a sensitivity analysis for the permutational t-test.}
@@ -12,6 +12,8 @@ separable1vk(ymat, gamma = 1, k)
 \item{gamma}{gamma is the value of the sensitivity parameter; see the documentation for the senmk function. One should use a value of gamma >= 1.}
 
 \item{k}{k smallest biases are bounded by gamma}
+
+\item{precise}{use precise method or not in the case of matched pairs}
 }
 \value{
 A list.

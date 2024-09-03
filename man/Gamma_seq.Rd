@@ -4,7 +4,7 @@
 \alias{Gamma_seq}
 \title{The sequence of sensitivity values under the loosen precondition that only parts of the biases are bounded.}
 \usage{
-Gamma_seq(y, z, mset, inner = 0, trim = 3, thres, Ks, tol = 1e-04)
+Gamma_seq(y, z, mset, inner = 0, trim = 3, thres, Ks, tol = 1e-04, precise = FALSE)
 }
 \arguments{
 \item{y}{A vector of responses with no missing data.}
@@ -24,6 +24,8 @@ Taking trim < Inf limits the influence of outliers; see Huber (1981). Taking tri
 \item{Ks}{the sequence of k that need to generate Gamma_{[k]}, the sequence needs to be in decreasing order}
 
 \item{tol}{the desired accuracy (convergence tolerance).}
+
+\item{precise}{use precise method or not in the case of matched pairs}
 }
 \value{
 A list of the lower confidence limits for the biases at rank k for the k's provided in the parameter Ks

@@ -15,7 +15,8 @@ senmk(
   lambda = 1/2,
   tau = 0,
   alternative = "greater",
-  TonT = FALSE
+  TonT = FALSE,
+  precise = FALSE
 )
 }
 \arguments{
@@ -43,6 +44,7 @@ An error will result unless 0 < lambda < 1.}
 \item{alternative}{If alternative="greater", the null hypothesis of a treatment effect of tau is tested against the alternative of a treatment effect larger than tau. If alternative="less", the null hypothesis of a treatment effect of tau is tested against the alternative of a treatment effect smaller than tau. In particular, alternative="less" is equivalent to: (i) alternative="greater", (ii) y replaced by -y, and (iii) tau replaced by -tau. See the note for discussion of two-sided sensitivity analyses.}
 
 \item{TonT}{TonT refers to the effect of the treatment on the treated; see Rosenbaum and Rubin (1985, equation 1.1.1) The default is TonT=FALSE. If TonT=FALSE, then the total score in matched set i is divided by the number ni of individuals in set i, as in expression (8) in Rosenbaum (2007). This division by ni has few consequences when every matched set has the same number of individuals, but when set sizes vary, dividing by ni is intended to increase efficiency by weighting inversely as the variance; see the discussion in section 4.2 of Rosenbaum (2007). If TonT=TRUE, then the division is by ni-1, not by ni, and there is a further division by the total number of matched sets to make it a type of mean. If TonT=TRUE and trim=Inf, then the statistic is the mean over matched sets of the treated minus mean-control response, so it is weighted to estimate the average effect of the treatment on the treated. See the examples.}
+\item{precise}{use precise method or not in the case of matched pairs}
 }
 \value{
 A list.
