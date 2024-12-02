@@ -1,6 +1,6 @@
 ---
 title: "Evaluating the effect of smoking on blood cadmium and lead levels using the developed package `sensitivityq`"
-author: "Anonymous"
+author: "Dongxiao Wu and Xinran Li"
 output: pdf_document
 bibliography: sen.bib 
 ---
@@ -14,11 +14,11 @@ This file illustrates the R package "sensitivityq" for sensitivity analysis base
 
 # Install the `sensitivityq` package
 
-We can install the package from Github. The github page of the package (https://github.com/Anonymous/sensitivityq) contains main functions with detailed explanation in R documentation. 
+We can install the package from Github. The github page of the package (https://github.com/dongxiao-wu/sensitivityq) contains main functions with detailed explanation in R documentation. 
 # Install the package via devtools, and then load:
 ```{r, force = TRUE, warning = FALSE, eval = FALSE}
 library(devtools)
-install_github("Anonymous/sensitivityq")
+install_github("dongxiao-wu/sensitivityq")
 ```
 
 We can also install the package directly by running `devtools::install("sensitivityq")` in the console once we download the package. Then we can load the package by:
@@ -37,7 +37,7 @@ Below we provide the code to replicate data analysis in the paper "Sensitivity A
 We use the data from the 2005–2006 National Health and Nutrition Examination Survey, which are also available in @bigmatch2020. 
 The data include 2475 observations, including 521 daily smokers and 1963 nonsmokers. 
 We use the recent optimal matching algorithm proposed by in @YuRosenbaum2019, which takes into account six covariates including gender, age, race, education level, household income level and body mass index; for a more detailed description of these covariates, see, e.g., @bigmatch2020. The matched data consists of 512 matched sets, each of which contains one daily smoker and two nonsmokers.
-The original data `nh0506.rds` and the matched data `md.rds` are both available on the github page of the package (https://github.com/Anonymous/sensitivityq).
+The original data `nh0506.rds` and the matched data `md.rds` are both available on the github page of the package (https://github.com/dongxiao-wu/sensitivityq).
 
 We first show the box plots of the six covariates for smokers, matched nonsmokers and original nonsmokers. From them, we can see that the balance of these covariates has been substantially improved by matching.
 
